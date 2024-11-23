@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Entorno virtual
+venv/
+menv/
+env/
+
+# Configuración local
+.env
+
+# Archivos de bases de datos
+*.sqlite3
+
+# Archivos estáticos y de medios
+/staticfiles/
+media/
+
+# Archivos de migración
+*/migrations/*
+
+# IDEs y editores
+.vscode/
+.idea/
+*.swp
