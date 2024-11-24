@@ -24,6 +24,7 @@ class CustomUserAdmin(UserAdmin):
     # Eliminamos 'groups' y 'user_permissions' de filter_horizontal
     filter_horizontal = ()  # No se usan estos campos
     search_fields = ('email', 'username')
+    readonly_fields = ('date_joined', 'last_login')
     
     # 'ordering' debe ser una lista o tupla
     ordering = ('email',)
