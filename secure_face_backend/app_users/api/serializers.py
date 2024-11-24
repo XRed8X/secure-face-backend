@@ -7,7 +7,7 @@ class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = ['id', 'email', 'username', 'is_active', 'date_joined', 'last_login',]
-        read_only_fields = ['date_joined', 'last_login']
+        read_only_fields = ['id', 'date_joined', 'last_login']
         
 class CreateCustomUserSerializer(serializers.ModelSerializer):
     """ Serializer to create a user with hashed password """
