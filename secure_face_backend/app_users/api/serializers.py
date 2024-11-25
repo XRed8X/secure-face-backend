@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from app_users.models import CustomUser
+from django.contrib.auth import authenticate
 
 class CustomUserSerializer(serializers.ModelSerializer):
     """ Serializer for thee CustomUser model """
@@ -20,3 +21,13 @@ class CreateCustomUserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """ Override to hash the password """
         return CustomUser.objects.create_user(**validated_data)
+    
+class LoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField()
+
+    def validate(self, data):
+        user = authenticate(username=data['email'], password=data['password'])
+        if user is None:
+            raise serializers.ValidationError("Invalid credentials")
+        return {'user': user}
