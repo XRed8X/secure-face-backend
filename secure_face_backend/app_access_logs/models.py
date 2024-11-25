@@ -14,7 +14,7 @@ class AccessLog(models.Model):
     )
     timestamp = models.DateTimeField(auto_now_add = True, verbose_name = "Timestamp")
     ip_address = models.GenericIPAddressField(null = True, blank = True, verbose_name = "IP Address Address")
-    success = models.BoleanField(default = False, verbose_name = "Success Attemp?")
+    success = models.BooleanField(default = False, verbose_name = "Success Attemp?")
     message = models.TextField(null = True, blank = True, verbose_name = "Message")
     
     def __str__(self):
