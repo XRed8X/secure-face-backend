@@ -19,7 +19,7 @@ env/
 media/
 
 # Archivos de migración
-*/migrations/*
+**/migrations/
 
 # IDEs y editores
 .vscode/
